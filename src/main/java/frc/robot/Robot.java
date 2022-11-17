@@ -19,7 +19,15 @@ public class Robot extends TimedRobot {
   
   Joystick controller = new Joystick(0);
   JoystickButton button = new JoystickButton(controller, 3);
-  
+  public void run(){
+    if(button.get()){
+      motor.set(0.2);
+    else
+      motor.stopMotor();
+    }
+  }
+    
+ 
 
   public boolean seesBall() {
     return (sensor.getValue() < 50);
